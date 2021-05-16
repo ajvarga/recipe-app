@@ -11,18 +11,20 @@ const Recipe = (props) => {
     return ( 
     <div className={style.recipe}>
         <div>
-            <div className='cardFace'>
-                <h1>{props.title}</h1>
+            <div className={style.cardFront}>
                 <img src={props.image} alt=''/>
+                <h1>{props.title}</h1>
             </div>
-            <div className='cardBack'>
-                <ul>
-                    {props.ingredients.map(ingredient => (
-                        <li>{ingredient.text}</li>
-                    ))}
-                </ul>
-                <p>calories:  {props.calories}</p>
-                <button>Bookmark</button>
+            <div className={style.cardBack}>
+                <div className='cardContent'>
+                    <ul>
+                        {props.ingredients.map(ingredient => (
+                            <li>{ingredient.text}</li>
+                        ))}
+                    </ul>
+                    <p>calories:  {props.calories}</p>
+                </div>
+                {/* <button>Bookmark</button> */}
             </div>
         </div>
     </div>
