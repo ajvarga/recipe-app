@@ -3,14 +3,19 @@ import Recipe from './Recipe';
 import './App.css';
 
 function App() {
-
+  // API ID & Key from Edamam.com for Recipe Search 
   const APP_ID = 'ec098aa3'
   const APP_KEY = '5fa3149c3e986b56d1048c3750e88bcb'
+
+//recipes[] contains the JSON data returned from API
+// search[] contains the search Query, but is updated every keystroke
+// query[] contains the search query but is only updated upon button click, is used in useEffect 
 
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState('');
   const [query, setQuery] = useState('chicken');
 
+  // every time the search button is clicked, the page will get Recipes and re-render
   useEffect( () =>{
     getRecipes()
   }, [query]);
@@ -22,11 +27,11 @@ function App() {
     setRecipes(data.hits);
     console.log(data.hits)
   }
-
+// called onChange
   const updateSearch = e => {
     setSearch(e.target.value)
   }
-
+// called onSubmit
   const getSearch = e =>{
     e.preventDefault();
     setQuery(search)
