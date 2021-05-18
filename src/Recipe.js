@@ -5,7 +5,8 @@ import style from './recipe.module.css'
     title: string, recipe's title
     ingredients: an array of items
     calories: string, amount of calories in a dish
-    image: image url for food image*/
+    image: image url for food image
+*/
 
 const Recipe = (props) => {
     return ( 
@@ -15,6 +16,7 @@ const Recipe = (props) => {
                 <img src={props.image} alt=''/>
                 <h1>{props.title}</h1>
             </div>
+
             <div className={style.cardBack}>
                 <div className='cardContent'>
                     <ul>
