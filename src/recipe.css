@@ -1,21 +1,53 @@
 .card{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    border-radius: 1rem;
-    box-shadow: 0 0 5px rgba(0,0,0,.3);
+    border-radius: 10px;
+    box-shadow: 0px 5px 20px rgb(61, 61, 61);
     background-color: white;
-    height: 150px;
-    min-width: 40%;
+    margin: 20px;
+    flex-direction: column;
+    justify-content: space-around;
+    position: relative;
+    background: white;
+    align-items: center;
+    height: 200px;
+    min-width: 20%;
+    padding-bottom: 1rem;
+
+    transition: 1s;
+    transform: translate(0, var(--translate-y, 0));
+    transform: perspective(1000px)rotateY(var(--rotate-y, 0));
+    cursor: pointer;
+    transform-style: preserve-3d;
 }
 
+.card:hover{
+    --translate-y: -2px;
+    box-shadow: 0px 5px 20px rgb(0, 0, 0);
+}
+
+.card.flip{
+    --rotate-y: 180deg;
+}
+.card .image-box{
+    position: top;
+    background: black;
+    height: 100px;
+    width: 200px;
+    overflow: hidden;
+}
+
+.image-box img{
+    height: 100%;
+    width: 100%;
+}
 .card .front,
 .card .back{
     position: absolute;
     padding: 1rem;
     backface-visibility: hidden;
+}
 
+.card .front{
+    left: 0;
 }
 
 .card .back{

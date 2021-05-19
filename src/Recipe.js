@@ -1,5 +1,5 @@
-import React from 'react';
-import style from './recipe.module.css'
+import React, { useState } from 'react';
+import './recipe.css'
 
 /* props
     title: string, recipe's title
@@ -9,24 +9,25 @@ import style from './recipe.module.css'
 */
 
 const Recipe = (props) => {
+    const [flip, setFlip] = useState(false)
     return ( 
-    <div className={style.recipe}>
-        <div>
-            <div className={style.cardFront}>
-                <img src={props.image} alt=''/>
-                <h1>{props.title}</h1>
-            </div>
-
-            <div className={style.cardBack}>
-                <div className='cardContent'>
-                    <ul>
+    <div className='card-grid'>
+        <div className={`card ${flip ? 'flip' : ''}`} onClick={() => setFlip(!flip)}>
+            <div>
+                <div className='front'>
+                    <div className='image-box'>
+                        <img src={props.image} alt=''/>
+                    </div>
+                    <h2>{props.title}</h2>
+                </div>
+                <div className='back'>
+                    {/* <ul>
                         {props.ingredients.map(ingredient => (
                             <li>{ingredient.text}</li>
                         ))}
-                    </ul>
+                    </ul> */}
                     <p>calories:  {props.calories}</p>
                 </div>
-                {/* <button>Bookmark</button> */}
             </div>
         </div>
     </div>

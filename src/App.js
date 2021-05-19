@@ -43,16 +43,16 @@ function App() {
         <input className='search-bar' type='text' value={search} onChange={updateSearch}></input>
         <button className='search-button' type='submit'>SEARCH</button>
       </form>
-      <div className='recipes'>
-        {recipes.map(recipe =>(
-          <Recipe 
-            title={recipe.recipe.label} 
-            region={recipe.recipe.cuisineType} 
-            calories={recipe.recipe.calories} 
-            image={recipe.recipe.image}
-            ingredients={recipe.recipe.ingredients} //array
-            />
-        ))}
+      <div className='card-grid'>
+          {recipes.map(recipe =>(
+            <Recipe 
+              title={recipe.recipe.label} 
+              region={recipe.recipe.cuisineType} 
+              calories={recipe.recipe.calories} 
+              image={recipe.recipe.image}
+              ingredients={recipe.recipe.ingredients} //array
+              />
+          ))}
       </div>
     </div>
   );

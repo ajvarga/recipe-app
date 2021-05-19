@@ -23,8 +23,9 @@
   color: white;
 }
 
-.recipes{
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+.card-grid{
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
+
