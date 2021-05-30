@@ -51,5 +51,6 @@ img{
 }
 
 .card .back{
+    align-items: left;
     transform: rotateY(180deg);
 }

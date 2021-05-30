@@ -52,6 +52,10 @@ function App() {
               calories={recipe.recipe.calories} 
               image={recipe.recipe.image}
               ingredients={recipe.recipe.ingredients} //array
+              healthLabels={recipe.recipe.healthLabels}
+              totalDaily={recipe.recipe.totalDaily}
+              totalNutrients={recipe.recipe.totalNutrients}
+              servingSize={recipe.recipe.yield}
               />
           ))}
       </div>
