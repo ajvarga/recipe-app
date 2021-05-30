@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './recipe.css'
 
 /* props
@@ -10,6 +10,15 @@ import './recipe.css'
 
 const Recipe = (props) => {
     const [flip, setFlip] = useState(false)
+    const [cal, setCal] = useState(props.calories)
+
+    useEffect(() =>{
+        convertCal()
+    },[])
+
+    const convertCal = () => {
+        setCal(Math.round(cal))
+    }
     return ( 
     <div className='card-grid'>
         <div className={`card ${flip ? 'flip' : ''}`} onClick={() => setFlip(!flip)}>
@@ -26,7 +35,7 @@ const Recipe = (props) => {
                             <li>{ingredient.text}</li>
                         ))}
                     </ul> */}
-                    <p>calories:  {props.calories}</p>
+                    <p>calories:  {cal}</p>
                 </div>
             </div>
         </div>

@@ -8,9 +8,8 @@
     position: relative;
     background: white;
     align-items: center;
-    height: 200px;
-    min-width: 20%;
-    padding-bottom: 1rem;
+    height: 300px;
+    min-width: 30%;
 
     transition: 1s;
     transform: translate(0, var(--translate-y, 0));
@@ -29,20 +28,21 @@
 }
 .card .image-box{
     position: top;
+    align-items: center;
     background: black;
-    height: 100px;
-    width: 200px;
+    border-radius:10px;
+    height: 200px;
+    width: fill;
     overflow: hidden;
 }
 
-.image-box img{
+img{
     height: 100%;
     width: 100%;
 }
 .card .front,
 .card .back{
     position: absolute;
-    padding: 1rem;
     backface-visibility: hidden;
 }
 
